@@ -9,7 +9,7 @@ public class jdbcDemo {
         String pass = "aps2001";
 
         //step 2 load and register driver      (Optional Step)
-//        Class.forName("org.postgresql.Driver");
+        Class.forName("org.postgresql.Driver");
 
         //step 3 create connection
         Connection con = DriverManager.getConnection(url, uname, pass);
