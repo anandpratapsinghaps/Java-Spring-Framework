@@ -14,6 +14,10 @@ public class jdbcDemo {
         //step 3 create connection
         Connection con = DriverManager.getConnection(url, uname, pass);
 
+        //step 4 create statement
+        Statement st = con.createStatement();
+
+
         System.out.println("connection ho gya");
     }
 }
