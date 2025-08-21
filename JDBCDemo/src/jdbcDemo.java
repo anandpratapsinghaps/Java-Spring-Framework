@@ -22,7 +22,10 @@ public class jdbcDemo {
 
         // step 5 execute statement
         ResultSet rs = st.executeQuery(sql);
-        System.out.println(rs.next());
+        rs.next();
+        String name = rs.getString("sname");
+        System.out.println(name);
+//      System.out.println(rs.next());
 
         //step 6 close connection
         con.close();
