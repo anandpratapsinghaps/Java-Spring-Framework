@@ -36,7 +36,6 @@ public class jdbcDemo {
             System.out.print(rs.getString(2) + " ");
             System.out.println(rs.getInt(3) + " ");
         }
-
         //step 6 close connection
         con.close();
 
