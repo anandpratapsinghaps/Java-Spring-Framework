@@ -39,6 +39,7 @@ public class jdbcDemo {
 
         //step 6 close connection
         con.close();
+        System.out.println("connection closed");
 
 
     }
