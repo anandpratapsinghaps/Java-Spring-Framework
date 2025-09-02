@@ -1,5 +1,9 @@
 package org.example;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -9,6 +13,12 @@ public class Main {
         s1.setRollno(1);
         s1.setSname("Aps");
         s1.setMarks(90);
-        System.out.println(s1);
+
+        Configuration cfg = new Configuration();
+        cfg.configure();
+
+        SessionFactory sf = cfg.buildSessionFactory();
+        Session session = sf.openSession();
+        session.persist(s1);
     }
 }
