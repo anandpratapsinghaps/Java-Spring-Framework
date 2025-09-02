@@ -11,9 +11,9 @@ public class Main {
     public static void main(String[] args) {
 
         student s1 = new student();
-        s1.setRollno(1);
-        s1.setSname("Aps");
-        s1.setMarks(90);
+        s1.setRollno(2);
+        s1.setSname("Anand");
+        s1.setMarks(80);
 
         Configuration cfg = new Configuration();
         cfg.addAnnotatedClass(org.example.student.class);     //It tells Hibernate which class (entity) it should map to the database.
