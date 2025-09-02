@@ -1,6 +1,12 @@
 package org.example;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class student {
+
+    @Id
     private int rollno;
     private  String sname;
     private int marks;
