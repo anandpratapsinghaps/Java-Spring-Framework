@@ -11,9 +11,9 @@ public class Main {
     public static void main(String[] args) {
 
         student s1 = new student();
-        s1.setRollno(2);
-        s1.setSname("Anand");
-        s1.setMarks(95);
+//        s1.setRollno(2);
+//        s1.setSname("Anand");
+//        s1.setMarks(95);
 
         student s2 = null;
 
@@ -27,16 +27,20 @@ public class Main {
                 .buildSessionFactory();
         Session session = sf.openSession();
 
+        //fetch data
+        s1 = session.find(student.class,1);
         Transaction transaction = session.beginTransaction();
 //        session.persist(s1);
 
         //to update data
-        session.merge(s1);
+//        session.merge(s1);
+
+        //delete the data
+        session.remove(s1);
 
         transaction.commit();
 
-        //fetch data
-//        s2 = session.find(student.class,3);
+
         session.close();
         sf.close();
 
