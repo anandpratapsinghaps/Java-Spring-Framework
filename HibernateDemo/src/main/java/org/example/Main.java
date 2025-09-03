@@ -17,7 +17,7 @@ public class Main {
 
         Configuration cfg = new Configuration();
         cfg.addAnnotatedClass(org.example.student.class);     //It tells Hibernate which class (entity) it should map to the database.
-        cfg.configure();
+        cfg.configure();    //loads cononfiguration
 
         SessionFactory sf = cfg.buildSessionFactory();
         Session session = sf.openSession();
