@@ -15,6 +15,8 @@ public class Main {
         s1.setSname("Vaishu");
         s1.setMarks(99);
 
+        student s2 = null;
+
        // Configuration cfg = new Configuration();
        // cfg.addAnnotatedClass(org.example.student.class);     //It tells Hibernate which class (entity) it should map to the database.
        // cfg.configure();    //loads cononfiguration
@@ -25,12 +27,15 @@ public class Main {
                 .buildSessionFactory();
         Session session = sf.openSession();
 
-        Transaction transaction = session.beginTransaction();
-        session.persist(s1);
-        transaction.commit();
+//        Transaction transaction = session.beginTransaction();
+//        session.persist(s1);
+//        transaction.commit();
+
+        //fetch data
+        s2 = session.find(student.class,3);
         session.close();
         sf.close();
 
-        System.out.println(s1);
+        System.out.println(s2);
     }
 }
