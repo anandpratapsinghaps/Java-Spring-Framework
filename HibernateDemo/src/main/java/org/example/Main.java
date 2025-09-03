@@ -25,6 +25,8 @@ public class Main {
         Transaction transaction = session.beginTransaction();
         session.persist(s1);
         transaction.commit();
+        session.close();
+        sf.close();
 
         System.out.println(s1);
     }
