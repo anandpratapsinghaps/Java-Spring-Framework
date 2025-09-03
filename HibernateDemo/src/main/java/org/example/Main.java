@@ -11,15 +11,18 @@ public class Main {
     public static void main(String[] args) {
 
         student s1 = new student();
-        s1.setRollno(2);
-        s1.setSname("Anand");
-        s1.setMarks(80);
+        s1.setRollno(3);
+        s1.setSname("Vaishu");
+        s1.setMarks(99);
 
-        Configuration cfg = new Configuration();
-        cfg.addAnnotatedClass(org.example.student.class);     //It tells Hibernate which class (entity) it should map to the database.
-        cfg.configure();    //loads cononfiguration
+       // Configuration cfg = new Configuration();
+       // cfg.addAnnotatedClass(org.example.student.class);     //It tells Hibernate which class (entity) it should map to the database.
+       // cfg.configure();    //loads cononfiguration
 
-        SessionFactory sf = cfg.buildSessionFactory();
+        SessionFactory sf = new Configuration()
+                .addAnnotatedClass(org.example.student.class)
+                .configure()
+                .buildSessionFactory();
         Session session = sf.openSession();
 
         Transaction transaction = session.beginTransaction();
