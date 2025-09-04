@@ -10,33 +10,39 @@ import org.hibernate.cfg.Configuration;
 public class Main {
     public static void main(String[] args) {
 
-        student s1 = new student();
+//        student s1 = new student();
 //        s1.setRollno(2);
 //        s1.setSname("Anand");
 //        s1.setMarks(95);
 
-        student s2 = null;
+//        student s2 = null;
+
+        Alien a1 = new Alien();
+        a1.setAid(101);
+        a1.setaName("Jaadu");
+        a1.setTech("dhoooop");
 
        // Configuration cfg = new Configuration();
        // cfg.addAnnotatedClass(org.example.student.class);     //It tells Hibernate which class (entity) it should map to the database.
        // cfg.configure();    //loads cononfiguration
 
         SessionFactory sf = new Configuration()
-                .addAnnotatedClass(org.example.student.class)
+                .addAnnotatedClass(org.example.Alien.class)
                 .configure()
                 .buildSessionFactory();
         Session session = sf.openSession();
 
         //fetch data
-        s1 = session.find(student.class,1);
+//        s1 = session.find(student.class,1);
         Transaction transaction = session.beginTransaction();
 //        session.persist(s1);
+        session.persist(a1);
 
         //to update data
 //        session.merge(s1);
 
         //delete the data
-        session.remove(s1);
+//        session.remove(s1);
 
         transaction.commit();
 
@@ -44,6 +50,6 @@ public class Main {
         session.close();
         sf.close();
 
-        System.out.println(s1);
+        System.out.println(a1);
     }
 }
