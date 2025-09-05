@@ -11,6 +11,8 @@ public class Alien {
     @Id
     private int aid;
     private  String aName;
+    private String tech;
+
 
     public int getAid() {
         return aid;
@@ -35,8 +37,6 @@ public class Alien {
     public void setTech(String tech) {
         this.tech = tech;
     }
-
-    private String tech;
 
     @Override
     public String toString() {
