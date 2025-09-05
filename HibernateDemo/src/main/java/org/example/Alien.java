@@ -1,11 +1,11 @@
 package org.example;
 
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity (name = "Alien_Table")
-@Table(name = "Alien_Table")
+@Entity
 public class Alien {
 
     @Id
@@ -13,6 +13,16 @@ public class Alien {
     private  String aName;
     private String tech;
 
+    @Embedded
+    private Laptop laptop;
+
+    public Laptop getLaptop() {
+        return laptop;
+    }
+
+    public void setLaptop(Laptop laptop) {
+        this.laptop = laptop;
+    }
 
     public int getAid() {
         return aid;
@@ -44,6 +54,7 @@ public class Alien {
                 "aid=" + aid +
                 ", aName='" + aName + '\'' +
                 ", tech='" + tech + '\'' +
+                ", laptop=" + laptop +
                 '}';
     }
 }

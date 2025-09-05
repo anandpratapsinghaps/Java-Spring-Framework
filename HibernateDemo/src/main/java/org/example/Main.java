@@ -17,10 +17,17 @@ public class Main {
 
 //        student s2 = null;
 
+        Laptop l1 = new Laptop();
+        l1.setBrand("Asus");
+        l1.setModel("Rog");
+        l1.setRam(16);
+
+
         Alien a1 = new Alien();
         a1.setAid(101);
         a1.setaName("Jaadu");
         a1.setTech("dhoooop");
+        a1.setLaptop(l1);
 
        // Configuration cfg = new Configuration();
        // cfg.addAnnotatedClass(org.example.student.class);     //It tells Hibernate which class (entity) it should map to the database.
