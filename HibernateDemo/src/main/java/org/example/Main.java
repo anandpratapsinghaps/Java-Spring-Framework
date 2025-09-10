@@ -18,6 +18,7 @@ public class Main {
 //        student s2 = null;
 
         Laptop l1 = new Laptop();
+        l1.setLid(1);
         l1.setBrand("Asus");
         l1.setModel("Rog");
         l1.setRam(16);
@@ -35,6 +36,7 @@ public class Main {
 
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(org.example.Alien.class)
+                .addAnnotatedClass(org.example.Laptop.class)
                 .configure()
                 .buildSessionFactory();
         Session session = sf.openSession();
@@ -43,6 +45,8 @@ public class Main {
 //        s1 = session.find(student.class,1);
         Transaction transaction = session.beginTransaction();
 //        session.persist(s1);
+
+        session.persist(l1);
         session.persist(a1);
 
         //to update data

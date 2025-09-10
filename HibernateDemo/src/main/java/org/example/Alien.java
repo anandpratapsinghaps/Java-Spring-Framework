@@ -1,9 +1,6 @@
 package org.example;
 
-import jakarta.persistence.Embedded;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 public class Alien {
@@ -13,7 +10,7 @@ public class Alien {
     private  String aName;
     private String tech;
 
-    @Embedded
+    @OneToOne
     private Laptop laptop;
 
     public Laptop getLaptop() {
