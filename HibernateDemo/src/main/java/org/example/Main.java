@@ -6,6 +6,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import java.util.Arrays;
+import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -31,15 +32,41 @@ public class Main {
         l2.setModel("XPS");
         l2.setRam(32);
 
+        Laptop l3 = new Laptop();
+        l3.setLid(3);
+        l3.setBrand("Acer");
+        l3.setModel("Aspire 7");
+        l3.setRam(64);
+
 
         Alien a1 = new Alien();
         a1.setAid(101);
         a1.setaName("Jaadu");
         a1.setTech("dhoooop");
-        a1.setLaptops(Arrays.asList(l1, l2));
 
-        l1.setAlien(a1);
-        l2.setAlien(a1);
+        Alien a2 = new Alien();
+        a2.setAid(102);
+        a2.setaName("APS");
+        a2.setTech("MERN");
+
+        Alien a3 = new Alien();
+        a3.setAid(103);
+        a3.setaName("Anand");
+        a3.setTech("Java");
+
+
+        a1.setLaptops(List.of(l1, l3));
+        a2.setLaptops(List.of(l2));
+        a3.setLaptops(Arrays.asList(l1, l2));
+
+        l1.setAliens(List.of(a1, a3));
+        l2.setAliens(Arrays.asList(a2, a3));
+        l3.setAliens(List.of(a1));
+
+
+
+//        l1.setAlien(a1);
+//        l2.setAlien(a1);
 
        // Configuration cfg = new Configuration();
        // cfg.addAnnotatedClass(org.example.student.class);     //It tells Hibernate which class (entity) it should map to the database.
@@ -59,7 +86,10 @@ public class Main {
 
         session.persist(l1);
         session.persist(l2);
+        session.persist(l3);
         session.persist(a1);
+        session.persist(a2);
+        session.persist(a3);
 
         //to update data
 //        session.merge(s1);
