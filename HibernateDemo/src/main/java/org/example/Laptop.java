@@ -16,13 +16,9 @@ public class Laptop {
     @ManyToMany(mappedBy = "laptops")
     private List<Alien> aliens;
 
-    public List<Alien> getAliens() {
-        return aliens;
-    }
+    public List<Alien> getAliens() { return aliens; }
 
-    public void setAliens(List<Alien> aliens) {
-        this.aliens = aliens;
-    }
+    public void setAliens(List<Alien> aliens) { this.aliens = aliens; }
 
     public String getBrand() {
         return Brand;
